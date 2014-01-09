@@ -1,22 +1,23 @@
-package Stack;
+package applications;
 
 import interfaces.Stack;
 import Exceptions.EmptyStackException;
 import Exceptions.StackFullException;
+import Stack.ArrayStack;
 
-public class ArrayStackWithMin implements Stack<Integer> {
+public class MinArrayStack extends ArrayStack<Integer> {
 
-	private int size; // default 0
-	private int[] elements;
 	private Stack<Integer> stackMin;
-
-	public ArrayStackWithMin(int capacity) {
+	private int[] elements;
+	
+	
+	public MinArrayStack(int capacity) {
+		super();
 		elements = new int[capacity];
-
-		// this stack keeps track of Mins
 		stackMin = new ArrayStack<Integer>(capacity);
 	}
 
+	// new defined
 	public Integer getMin() {
 		if (stackMin.isEmpty()) {
 			return Integer.MAX_VALUE;
@@ -26,7 +27,7 @@ public class ArrayStackWithMin implements Stack<Integer> {
 			} catch (EmptyStackException e) {
 				e.printStackTrace();
 			}
-			return -1;
+			return null;
 		}
 	}
 
@@ -42,9 +43,7 @@ public class ArrayStackWithMin implements Stack<Integer> {
 			size++;
 
 		} else {
-
 			throw new StackFullException("Your stack is full.");
-
 		}
 	}
 
@@ -61,37 +60,16 @@ public class ArrayStackWithMin implements Stack<Integer> {
 
 		return elements[size];
 	}
-
-	// 'Peeks' at the top element of the stack. Throws an EmptyStackException
-	// if the stack is empty.
+	
 	@Override
-	public Integer top() throws EmptyStackException {
-		if (isEmpty()) {
-			throw new EmptyStackException("Cannot view top of empty stack!");
-		}
-		return elements[size - 1];
-	}
-
-	// Returns the size of the stack
-	@Override
-	public int size() {
-		return size;
-	}
-
-	// Tells us if the stack is empty or not
-	@Override
-	public boolean isEmpty() {
-		return size == 0;
-	}
-
-	@Override
-	public String toString() {
+	public String toString(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("Stack: (bottom) - ");
-		for (int i = 0; i < size; i++) {
+		sb.append("MinStack: (bottom) - ");
+		for(int i = 0;i<size;i++){
 			sb.append(elements[i]).append(" - ");
 		}
 		sb.append("(top)");
 		return sb.toString();
 	}
+	
 }

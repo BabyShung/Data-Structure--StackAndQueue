@@ -6,8 +6,8 @@ import Exceptions.StackFullException;
 
 public class ArrayStack<T> implements Stack<T> {
 
-	private int size; // default 0
-	private T[] elements;
+	protected int size; // default 0
+	protected T[] elements;
 
 	// Create an ArrayStack with the given capacity. Notice the casting we
 	// do - Java does not allow you to create new arrays of a generic type.
@@ -15,6 +15,10 @@ public class ArrayStack<T> implements Stack<T> {
 		elements = (T[]) new Object[capacity];
 	}
 
+	public ArrayStack(){
+		
+	}
+	
 	@Override
 	public void push(T element) {
 		// Make sure the element will fit in our array before we 'push' it
