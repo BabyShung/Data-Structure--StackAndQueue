@@ -1,11 +1,11 @@
+import Queue.EmptyQueueException;
 import applications.MinArrayStack;
-import interfaces.Stack;
-import Stack.ArrayStack;
+import applications.TwoStacksQueue;
 
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws EmptyQueueException {
 		
          MinArrayStack stackMin = new MinArrayStack(10);
 
@@ -17,6 +17,21 @@ public class Test {
 
          System.out.println(stackMin);
          System.out.println("min: " + stackMin.getMin());
+         
+         
+         TwoStacksQueue<Object> tsq = new TwoStacksQueue<Object>(10);
+         tsq.enqueue(2);
+         tsq.enqueue(4);
+         tsq.enqueue(3);
+         tsq.enqueue(2);
+         tsq.enqueue(1);
+         
+         while(!tsq.isEmpty()){
+        	 System.out.println(tsq.front());
+        	 System.out.println(tsq.dequeue());
+         }
+         
+         
 	}
 
 }

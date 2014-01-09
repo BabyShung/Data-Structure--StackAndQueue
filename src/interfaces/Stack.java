@@ -1,6 +1,6 @@
 package interfaces;
 
-import Exceptions.EmptyStackException;
+import Stack.EmptyStackException;
 
 public interface Stack<T>
 {

@@ -1,8 +1,6 @@
 package Stack;
 
 import interfaces.Stack;
-import Exceptions.EmptyStackException;
-import Exceptions.StackFullException;
 
 public class ArrayStack<T> implements Stack<T> {
 

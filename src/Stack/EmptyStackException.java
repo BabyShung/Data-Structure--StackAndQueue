@@ -1,4 +1,4 @@
-package Exceptions;
+package Stack;
 
 public class EmptyStackException extends Exception {
 	public EmptyStackException(String msg) {

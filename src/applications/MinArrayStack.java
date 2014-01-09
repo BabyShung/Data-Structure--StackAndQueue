@@ -1,9 +1,9 @@
 package applications;
 
 import interfaces.Stack;
-import Exceptions.EmptyStackException;
-import Exceptions.StackFullException;
 import Stack.ArrayStack;
+import Stack.EmptyStackException;
+import Stack.StackFullException;
 
 public class MinArrayStack extends ArrayStack<Integer> {
 
