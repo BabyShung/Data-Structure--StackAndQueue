@@ -1,8 +1,7 @@
 import Queue.EmptyQueueException;
 import Stack.EmptyStackException;
-import applications.MinArrayStack;
 import applications.SetOfStacks;
-import applications.TwoStacksQueue;
+import applications.ValidParentheses;
 
 public class Test {
 
@@ -49,6 +48,10 @@ public class Test {
 		}
 		System.out.println("size: " + sos.size());
 
+		
+		ValidParentheses ivp = new ValidParentheses();
+		System.out.println("isValidParentheses: "+ivp.isValidParentheses("{}()[][({})]"));
+		
 	}
 
 }
